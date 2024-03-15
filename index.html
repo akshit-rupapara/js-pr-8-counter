@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+</head>
+<body>
+
+    <center>
+        <h1>Counter App</h1>
+        <button onclick="increase()" type="button">+</button>
+        <span id="counter"></span>
+        <button onclick="decrease()" type="button">-</button>
+    </center>
+    <button onclick="reset()" id="reset">Reset</button>
+ 
+
+    <style>
+        button{
+            width: 150px;
+            height: 75px;
+            margin: 0 100px 0 90px;
+            background-color: green;
+            color: white;
+            border-radius: 10px;
+            font-size: 50px;
+            border: none;
+        }
+        h1 {
+            margin-bottom: 50px;
+        }
+        #counter {
+            width: 150px;
+            height: 75px;
+            line-height: 75px;
+            background-color: peachpuff;
+            display: inline-block;
+            border-radius: 10px;
+            font-size: 30px;
+            font-weight: 700;
+
+        }
+        #reset{
+            margin: 50px auto;
+            display: block;
+            font-size: 35px;
+        }
+    </style>
+
+    <script>
+
+        let cnt = 0;
+
+        document.getElementById('counter').innerHTML =` ${cnt}`;
+        function increase() {
+            cnt++;
+            document.getElementById("counter").innerHTML=`${cnt}`;
+        }
+        
+        function decrease(){
+            if (cnt > 0) {
+                cnt--;
+                document.getElementById("counter").innerHTML=`${cnt}`;
+            }
+        } 
+        
+        function reset(){
+            cnt=0;
+            document.getElementById("counter").innerHTML=`${cnt}`;
+        }
+
+    </script>
+    
+</body>
+</html>
